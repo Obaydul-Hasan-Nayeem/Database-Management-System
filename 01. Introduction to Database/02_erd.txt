@@ -1,0 +1,35 @@
+ER --> Entity Relationship
+
+Why ERD --> Detabase modeling 
+
+===== COMPONENTS ============================
+    - entity [ja kichu amra save rakhte chai]
+    - attribute [properties of entity]
+    - Relationship
+
+------relationship ------------------------------
+    - connectivity [akta entitir sathe onno akta entityr connection]
+    - cardinality [koyta kore shomporko ache]
+        - 1 : 1
+        - 1 : n or n : 1
+        - m : n
+
+-------participation------------------------------
+    - total participation [jodi shob entity guloi participate kore]
+    - partial participation [jodi kichu entity bad thake] 
+
+===== ERD NOTATIONS =================================
+    - entity 
+    - relation 
+    - connection
+    - cardinality
+
+-------- ENTITY ---------------------------
+    - strong entity [jader primary key thake]
+    - weak entity [jader primary key thake na --> insert primary key]
+
+
+===== DESIGN PRACTICES ===============================
+    (efficiently design)
+    - design er moddhe jeno kono cycle na thake
+    - 

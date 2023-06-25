@@ -1,0 +1,86 @@
+===== DATA vs INFORMATION =====
+data --> unorganized
+information --> organized
+
+===== DATABASE =================
+- database -> data + base 
+- a system / software
+- manage database
+
+Conditions:
+    - information
+    - organized
+    - computer based (electronic)
+
+Ja ja thake: 
+    - data / information
+    - hardware (computer, harddisk, memory card)
+    - software ()
+    - user (amra shobai)
+    - processing unit
+
+===== TYPES OF DATABASE ========
+    - non-relational:
+            - 1 table / 1 file
+            - multiple table / file but has no relation
+
+    - relational
+            - multiple table and has relation
+
+
+===== FUNCTIONALITES OF DBMS ====================
+    - create table
+    - rename table
+    - delete
+    - update
+    - query (searching) 
+
+
+===== ADVANTAGES OF DBMS ====================
+    - organizely data storing
+    - fast search
+    - parallel accessing
+
+===== USAGES OF DBMS ========================
+    - ticket purchasing
+    - library
+    - educational systems
+    - govt.
+    - websites
+
+===== PROPERTIES OF DATABASE =============
+    - field [column borabor thakbe] [eta k key bola jay]
+    - record [r -> row borabor thakbe]
+    - values (data) [protita cell e thakbe]
+
+===== KEY ===================================
+- 'key' hocche emon akta upadan jeta diye search kore value ber kora jay
+- field k 'key' bola hoy.
+
+Types of Key:
+    - primary key: je field ta shobar jonno unique
+    - composite primary key: unique vabe identify korar jonno ekadhik field lagle
+    - foreign key: kono akta table e onno akta table er primary key use kora hole
+
+===== RDBMS =======================
+    - jeshob DBMS e table gulor moddhe relation thakbe
+    - bortomane DBMS boltei RDBMS bujhay
+
+===== DATABASE RELATION =============================
+    1. one to one (1 : 1) [aktar sathe aktar shomporko]
+    2. one to many / many to one (1 : n / n : 1) 
+    3. many to many (m : n)
+
+===== DATABASE DESIGN ==========================
+    1. top down approach
+        - top: model, bottom: data
+
+    2. bottom up approach
+        - bottom: data, up: model
+
+    PITFALLS TO AVOID ---------------------------
+        - redundancy
+        - lack of completeness [emon kono record rakha jetar kono ostitto nai]
+
+
+
