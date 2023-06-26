@@ -14,6 +14,19 @@ Why ERD --> Detabase modeling
         - 1 : n or n : 1
         - m : n
 
+------attributes----------------------------------
+    1. composite (aksathe onk gulo attribute)
+        - name: first_name, last_name
+        - address: city, home, road, 
+
+    2. multivalued (akta attribute er value onk gula hole)
+        - {phone_no} 
+        - erd akar somoy curly bracket diye atkiye dite hoy
+
+    3. derived (kono akta kichu theke pele)
+        - age()
+        - erd akar somoy shamne akta first bracket diye dite hoy
+
 -------participation------------------------------
     - total participation [jodi shob entity guloi participate kore]
     - partial participation [jodi kichu entity bad thake] 
@@ -25,11 +38,17 @@ Why ERD --> Detabase modeling
     - cardinality
 
 -------- ENTITY ---------------------------
-    - strong entity [jader primary key thake]
-    - weak entity [jader primary key thake na --> insert primary key]
+    1. strong entity [jader primary key thake]
+        - erd akar somoy underline dite hoy
+
+    2. weak entity [jader primary key thake na --> insert primary key]
+        - erd akar somoy dotted underline dite hoy
 
 
 ===== DESIGN PRACTICES ===============================
     (efficiently design)
     - design er moddhe jeno kono cycle na thake
-    - 
+
+===== Others =========================================
+    - Generalization: vag kora
+    - Specialization: ekotrito kora
