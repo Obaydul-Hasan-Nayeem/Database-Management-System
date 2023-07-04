@@ -1,0 +1,21 @@
+UPDATE------------------------
+
+    UPDATE table_name
+    SET column1 = value1, column2 = value2
+    WHERE condition 
+
+DELETE----------------------------
+    DELETE FROM table_name
+    WHERE condition
+
+SELECT----------------------
+    (search kora)
+
+ALL:
+    SELECT *
+    FROM table_name
+
+NIRDISTO KICHU:
+    SELECT field_name1, field_name2
+    FROM table_name
+    WHERE condition 

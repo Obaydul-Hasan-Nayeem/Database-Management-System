@@ -19,7 +19,7 @@ query --> searching
     - SQL: Structured Query Language
 
 
-===== SQL ==============================
+===== SQL ===========================================
 Types-----------------------------
     1. DML: Data Manipulation Language
         (jeta diye data manipulate kora jay)
@@ -40,10 +40,10 @@ FEATURES---------------------------
     - semicolon at the end
     - online / multiline
 
-===== DATATYPES ============================
+===== DATATYPES ===========================================================
 STRING TYPES --------------------------------
     - CHAR(size)
-        - CHAR(5) --> abcde
+        - CHAR(5) --> abcde --> 5 tar kom o na, beshi o na
     - VARCHAR(size)
         - VARCHAR(10) --> 1 ta theke 10 ta projonto rakha jabe
     - TEXT(size)
@@ -63,7 +63,7 @@ DATE TIME RELATED -----------------------------
     - YEAR --> current year 
       
 
-===== SQL SYNTAXES ==============================
+===== SQL SYNTAXES =======================================================================
 CREATE 
 -------
     CREATE DATABASE database_name;
@@ -82,3 +82,115 @@ RENAME
 DROP
 ----
     drop table table_name;
+
+
+INSERT
+------
+    INSERT INTO table_name(column1, column2, ...)
+    VALUES(value1, value2, ...)
+
+
+DISTINCT
+--------
+(alada)
+
+    SELECT DISTINCT country_id  FROM countries;
+
+ORDER BY
+--------
+(sajano --> ascending / descending)
+
+    SELECT
+    FROM
+    WHERE  (optional)
+    ORDER BY (field name -> ASC / DSC)
+
+
+LIMIT
+-----
+(shimaboddho kora)
+
+SELECT
+FROM
+WHERE
+LIMIT   
+
+        LIMIT 10 --> first 10 ta
+        LIMIT 10 OFFSET 15 / LIMIT 10,15--> first 15 er por theke porer 10 ta
+
+
+ARITHMETIC OPERATORS ==============================
++ - * / %
+SELECT ___
+        SELECT 5 + 6
+        ........
+        ....
+
+
+COMPARISON OPERATORS ===============================
+(tulona)
+
+    smaller than <
+    smaller than or equal <=
+    greater than >
+    greater than or equal >=
+    equal = 
+    not equal !=
+    between
+
+
+   Examples:
+        SELECT first_name
+        FROM employees
+        WHERE salary >= 9000;
+
+        SELECT first_name, salary
+        FROM employees
+        WHERE salary BETWEEN 9000 AND 15000; 
+
+
+LOGICAL AND, OR ===============================================
+   
+   Examples:
+        SELECT *
+        FROM employees
+        WHERE first_name = "Steven" AND salary > 20000;  
+
+        SELECT *
+        FROM employees
+        WHERE salary > 20000 OR last_name = "Austin"
+
+
+IN, NOT IN, LIKE, AS ===============================================
+
+IN --> ache kina
+NOT IN --> nai kina
+LIKE --> pattern check
+AS --> alias / rename
+
+IN------------------------------------
+        SELECT *
+        FROM employees
+        WHERE job_id IN ("AC_ACCOUNT", "AC_MGR", "AD_ASST");
+           same --> WHERE job_id = "AC_ACCOUNT" OR job_id = "AC_MGR" OR job_id = "AD_ASST";
+
+NOT IN--------------------------------------------------------------
+    IN er ulta
+
+        SELECT *
+        FROM employees
+        WHERE job_id NOT IN ("AC_ACCOUNT", "AC_MGR", "AD_ASST");
+           same --> WHERE job_id != "AC_ACCOUNT" OR job_id != "AC_MGR" OR job_id != "AD_ASST";
+
+LIKE-------------------------------------------------------------------
+    SELECT *
+    FROM employees
+    WHERE first_name LIKE "s%";
+                           %s --> sheshe s thakbe
+                           s% --> prothome s thakbe
+                           %s% --> majhkhane s thakbe
+
+AS -------------------------------------------------------
+(rename)
+    SELECT first_name as Nayeem
+    FROM employees;

@@ -1,0 +1,47 @@
+===== CONSTRAINT ===================
+- constraint --> kind of rules / set of rules
+- CREATE TABLE korar somoy constraint set korte hoy
+
+TYPES:------------------------------
+    - NOT NULL
+    - PRIMARY KYE
+    - UNIQUE
+    - FOREIGN KEY
+    - CHECK
+    - DEFAULT
+
+Example:-----------------------------
+    CREATE Table Student (
+        Roll INT NOT NULL, 
+        Name VARCHAR NOT NULL,
+        ContactNo VARCHAR UNIQUE,
+        Email VARCHAR(30), 
+        CONSTRAINT pk_cons PRIMARY KEY(Roll),
+
+        UNIQUE(ContactNo)
+    );
+
+Different Ways to write Primary Key:---------------------
+    1. Roll INT NOT NULL UNIQUE PRIMARY KEY;
+
+    2. Roll INT,
+        .
+        .
+        .
+        PRIMARY KEY(Roll);
+
+    3. Roll INT,
+        .
+        .
+        .
+        CONSTRAINT pk_cons PRIMARY KEY(Roll);
+
+    4. Roll INT,
+        .
+        .
+        .
+        UNIQUE(Roll),
+        CONSTRAINT pk_cons PRIMARY KEY(Roll);
+
+N.B: kono variable k PRIMARY KEY declare korle UNIQUE r NOT NULL na likhleo hobe.
+    egulo autometic hoye jay. 
