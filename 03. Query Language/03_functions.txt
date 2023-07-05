@@ -1,0 +1,92 @@
+Function Using System:
+    SELECT function
+        SELECT PI() --> 3.14159...
+        N.B: jehetu egula function, tai obosshoi parenthesis () dite hobe.
+===========================================================================
+
+UPPER-------------
+    abc -> ABC
+    aBc -> ABC
+
+LOWER-------------
+    ABC -> abc
+    aBc -> abc
+
+ABS---------------
+    (modulous)
+    ABS(+2) -> 2
+    ABS(-2) -> 2
+
+COS, SIN--------------
+    COS(90) = COS(90 * (PI() / 180)) = ~0
+    egulor khetre degree k redian e niye nite hobe.
+
+ACOS, ASIN------------
+    COS inverse
+    ACOS(0) = 90
+
+CEIL--------------------
+    CEIL(25.5) -> 26
+    CEIL(25) -> 25
+
+FLOOR------------------
+    FLOOR(25.5) -> 25
+    FLOOR(25) -> 25
+
+DEGREES-----------------
+    (redian to degree)
+
+RADIANS---------------
+    (degree to radian)
+
+DIV--------------
+    (division)
+
+EXP-------------
+    (exponential)
+    EXP(10) -> value of e^10
+    EXP(-10) -> value of e^-10
+
+GREATEST----------
+    GREATEST(4, 6, 2, 8, 19, 4) -> 19
+
+LEAST----------------------
+    (GREATEST er ulta)
+    LEAST(4, 6, 2, 8, 19, 4) -> 2
+
+LN----------------------------
+    LN : Natural Logarithm
+    LN -> loge() -> LN(10) ->
+
+LOG--------------------
+    (like as LN)
+
+LOG10------------
+    10 based loge
+
+LOG2--------------
+    2 based log
+
+MOD-----------------
+    10 MOD 3 = 1
+
+PI-------------------
+    PI() -> 3.14159..........
+
+POWER--------------
+
+RAND---------------
+    (random value)
+    RAND() -> the value will be 0 to 1
+
+ROUND----------------
+    ROUND(135.375, 2) -> 135.38
+
+SQRT-----------------
+
+TRUNCATE--------------
+    ROUND(135.375, 2) -> 135.38
+    but TRUNCATE -> 135.37
+        TRUNCATE(135.375, 2) -> 135.37
+
+
