@@ -90,3 +90,56 @@ TRUNCATE--------------
         TRUNCATE(135.375, 2) -> 135.37
 
 
+GROUP FUNCTIONS ===============================================================
+MAX------------------------
+    SELECT MAX(column_name)
+    FROM table_name
+
+MIN------------------------
+    (max er biporit)
+
+COUNT----------------------
+    SELECT COUNT(column_name)
+        FROM table_name
+
+SUM------------------------
+    SELECT SUM(column_name)
+    FROM table_name
+
+AVG------------------------
+    SELECT AVG(column_name)
+        FROM table_name
+
+
+GROUP BY ===============================================================
+
+kotogulo unique job ache?--------------------------
+    SELECT job_id, COUNT(*)
+    FROM employees
+    GROUP BY job_id;
+
+protiti job er highest salary koto?----------------------
+    SELECT job_id, MAX(salary)
+    FROM employees
+    GROUP BY job_id;
+
+kon job e koto tk dicchi?--------------------------------
+    SELECT job_id, SUM(salary)
+    FROM employees
+    GROUP BY job_id;
+
+
+HAVING======================================================================
+    WHERE -> overall condition
+    HAVING -> nirdisto akta group er upore condition
+
+
+    SELECT job_id, COUNT(*)
+    FROM employees
+    GROUP BY job_id
+    HAVING COUNT(*) > 2;
+
+    SELECT job_id, COUNT(*)
+    FROM employees
+    GROUP BY job_id
+    HAVING MIN(salary) > 500;

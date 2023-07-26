@@ -1,8 +1,10 @@
 ===== SQL SYNTAXES =======================================================================
-
-SELECT column_name
+SELECT column_name (select mane kono kichu dekhano)
 FROM table_name
 WHERE conditions
+GROUP BY _____
+HAVING _____
+ORDER BY _____
 
 
 CREATE 
@@ -24,6 +26,16 @@ DROP
 ----
     drop table table_name;
 
+DELETE
+------
+    DELETE FROM table_name
+    WHERE conditions 
+
+TRUNCATE
+--------
+(akta table er shobgula row delete kora)
+
+    TRUNCATE TABLE table_name;
 
 INSERT
 ------
@@ -59,6 +71,8 @@ LIMIT
         LIMIT 10 --> first 10 ta
         LIMIT 10 OFFSET 15 / LIMIT 10,15--> first 15 er por theke porer 10 ta
 
+ALTER =====================
+    
 
 ARITHMETIC OPERATORS ==============================
 + - * / %
@@ -135,3 +149,161 @@ AS -------------------------------------------------------
 (rename)
     SELECT first_name as Nayeem
     FROM employees;
+
+
+Sub Query===================================
+    (akta Query er moddhe abr Query thakle)
+
+    karim (id - 101) er cheye beshi salary kar kar?
+    
+    SELECT name
+    FROM employees
+    WHERE salary > (SELECT salary
+                    FROM employees
+                    WHERE id = 101
+                    )
+
+
+    SELECT first_name, salary
+    FROM employees
+    WHERE salary < (
+                SELECT salary
+                FROM employees
+                WHERE employee_id = 107
+    );
+
+
+    SELECT last_name, job_id, salary
+    FROM employees
+    WHERE job_id != "IT_PROG"
+    AND salary < ANY (
+                    SELECT salary
+                    FROM employees
+                    WHERE job_id = "IT_PROG"
+                    );
+
+Correlated Sub Query===================================
+Q: emon record gulo ber koro jegulo jekono 3 joner cheye kom
+
+    SELECT *
+    FROM employees E1
+    WHERE 3 <= (
+        SELECT COUNT(*)
+        FROM EMPLOYEES E2
+        WHERE E2.SALARY < E1.SALARY
+    );
+
+Q: emon employee gulo search koro jader salary tar department e maximum
+    SELECT last_name, salary, department_id
+    FROM employees E1
+    WHERE NOT EXISTS
+    (
+        SELECT *
+        FROM employees E2
+        WHERE E2.department_id = E1.department_id AND
+        E2.salary > E1.salary
+    );
+
+
+JOIN ===================================
+(table jukto kora)
+
+doing without JOIN: (Inefficient)
+-------------------
+    SELECT student.roll, student.name, result.grade
+    FROM student, result
+    WHERE student.roll = result.roll 
+
+another example: 
+    SELECT employees.employee_id, employees.first_name, departments.department_name
+    FROM employees, departments
+    WHERE employees.department_id = departments.department_id;
+
+    evabe likhleo hobe:
+    SELECT employee_id, first_name, department_name
+    FROM employees, departments
+    WHERE employees.department_id = departments.department_id;
+
+doing with JOIN USING: (efficient)
+----------------
+    SELECT col1, col2, ...
+    FROM tbl1 JOIN tbl2 USING col2
+    WHERE ...
+    GROUP BY ...
+    HAVING ...
+    ORDER ...
+
+
+    SELECT employees.employee_id, employees.first_name, departments.department_name
+    FROM employees JOIN departments USING (department_id)
+
+    or,
+    SELECT e.employee_id, e.first_name, d.department_name
+    FROM employees e JOIN departments d USING (department_id)
+
+JOIN ON:
+-------
+    SELECT e.employee_id, e.first_name, d.department_name
+    FROM employees e JOIN departments d ON (e.department_id = d.department_id)
+
+
+    JOIN USING -> only alada table er khetre
+    JOIN ON -> same / alada table er khetre
+
+SELF JOIN===============================================
+    (nijer table er sathe nijer tabler er join)
+
+Q: kono employee er first name and oi employee er manager er firstname dekhate hobe
+    SELECT e.first_name, m.first_name
+    FROM employees e JOIN employees m
+    ON (e.manager_id = m.employee_id);
+
+    (SELF JOIN er somoy USING use kora jabe na)
+
+INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN ===========================================
+
+    SELECT ___
+    FROM tbl1 
+    ___ JOIN tbl2
+    ON (tbl1.col1 = tbl2.col2)
+
+
+SET operations ==============================
+ - non repeated 
+ - sorted (optional)
+
+ Operations: 
+    - UNION
+    - UNION ALL 
+    - MINUS
+    
+
+        SELECT col1, col2 [ekhane r nicher select e same number of col dite hobe]
+        FROM tbl1
+
+        UNION / UNION ALL / MINUS
+
+        SELECT col2, col3
+        FROM tbl2
+
+ON DELETE CASCADE ========================================
+    (ON DELETE korle oi record ti jotogulo table er sathe foreign key diye jukto
+    shegulo o delete hoye jabe)
+
+
+TRIGGER ====================================================
+    CREATE TRIGGER tr_cap
+    BEFORE INSERT ON employee
+    FOR EACH ROW 
+    SET NEW.name = UPPER(NEW.name)
+
+
+DATE and TIME ======================================
+SELECT DAYOFMONTH('2023-07-19');
+MONTH
+ADDDATE
+ADDTIME
+CONVERT_TZ
+CURDATE
+CURTIME
+DATE 
